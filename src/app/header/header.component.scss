@@ -1,0 +1,41 @@
+header{
+    height: 100px;
+
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .logo{
+            padding-top: 10px;
+            height: 100px;
+        }
+
+        /* Liens du menu */
+        .menu{
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            gap: 100px;
+            
+            .link{
+                text-decoration: none;
+            }
+
+            .link:hover{
+                color: #0074c7;
+                text-decoration: underline;
+            }
+        }
+
+        .btn{
+            background-color: #82b864;
+            color: #f1f8fc;
+        }
+
+        .btn:hover{
+            color: #0074c7;
+        }
+    }
+}

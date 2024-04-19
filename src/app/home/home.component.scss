@@ -1,0 +1,31 @@
+.home_section{
+    padding-bottom: 50px;
+
+    .top{
+        padding-top: 10px;
+
+        .boxes{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .box1, .box2, .box3{
+                border: 2px solid #cd2c2e;
+                padding: 10px;
+                width: 300px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .stars{
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+
+    }
+}

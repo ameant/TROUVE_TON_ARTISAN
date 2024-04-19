@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+    // Police titres
+@font-face {
+    font-family: "Graphik-Semibold-Trial";
+    src: url(.//assets/fonts/Graphik-Semibold-Trial.woff) format("woff");
+    src: url(.//assets/fonts/Graphik-Semibold-Trial.otf) format("opentype");
+}
+
+// Police textes 
+@font-face {
+    font-family: "Graphik-Regular-Trial";
+    src: url(.//assets/fonts/Graphik-Regular-Trial.woff) format("woff");
+    src: url(.//assets/fonts/Graphik-Regular-Trial.otf) format("opentype");
+}
+
+*{
+    color: #384050;
+    font-family: Graphik-Regular-Trial;
+}
+
+h1{
+    font-family: Graphik-Semibold-Trial;
+}

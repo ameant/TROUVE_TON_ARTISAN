@@ -1,0 +1,31 @@
+footer {
+    height: 130px;
+    background-color: #82b864;
+    display: flex;
+    justify-content: stretch;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+
+    address{
+        font-style: normal;
+        display: flex;
+        color: #f1f8fc;
+    }
+
+    .footer_links{
+        list-style-type: none;
+        display: flex;
+        align-self: flex-end;
+        gap: 160px;
+    
+        .f_link{
+            text-decoration: none;
+            color: #f1f8fc;
+        }
+
+        .f_link:hover{
+            color:#0074c7;
+        }
+    }
+}
