@@ -1,1 +1,19 @@
-<p>list works!</p>
+<div class="list">
+    <h1>Liste des artisans</h1>
+    <div class="list_boxes">
+        <div class="list_box" *ngFor="let artisan of artisans">
+            <a routerLink="/sheet" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <h2>{{ artisan.name }}</h2>
+            </a>
+            <p>{{ artisan.specialty }}</p>
+            <p>{{ artisan.location }}</p>
+            <p>{{ artisan.note }}</p>
+            <div class="stars">
+                <div *ngFor="let star of starsArray(artisan.stars)">
+                    <fa-icon [icon]="faStar" *ngIf="star !== 'half'"></fa-icon>
+                    <fa-icon [icon]="faStarHalfStroke" *ngIf="star === 'half'"></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,10 +7,9 @@
 
         <!-- Liens du menu -->
         <ul class="menu">
-            <li><a class="link" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Bâtiment</a></li>
-            <li><a class="link" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a></li>
-            <li><a class="link" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Fabrication</a></li>
-            <li><a class="link" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Alimentation</a></li>
+            <li *ngFor="let category of categories$ | async">
+                <a class="link" (click)="goToCategory(category)">{{ category }}</a>
+            </li>
         </ul>
 
         <!-- Barre de recherche -->

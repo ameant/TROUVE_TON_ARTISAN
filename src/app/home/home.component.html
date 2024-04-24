@@ -14,34 +14,11 @@
     <section class="top">
         <h1>Les 3 artisans du mois</h1>
         <div class="boxes">
-            <div class="box1">
-                <h2></h2>
-                <p></p>
-                <p></p>
-                <div class="stars">
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                </div>
-            </div>
-            <div class="box2">
-                <p></p>
-                <p></p>
-                <p></p>
-                <div class="stars">
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                </div>
-            </div>
-            <div class="box3">
-                <p></p>
-                <p></p>
-                <p></p>
+            <div class="box" *ngFor="let artisan of topArtisans">
+                <h2>{{ artisan.name }}</h2>
+                <p>{{ artisan.speciality }}</p>
+                <p>{{ artisan.location }}</p>
+                <p>{{ artisan.note }}</p>
                 <div class="stars">
                     <fa-icon [icon]="faStar"></fa-icon>
                     <fa-icon [icon]="faStar"></fa-icon>

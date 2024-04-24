@@ -11,6 +11,7 @@ import { SheetComponent } from './sheet/sheet.component';
 import { ErrorComponent } from './error/error.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { ArtisanFilterPipe } from './artisan-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ListComponent,
     SheetComponent,
-    ErrorComponent
+    ErrorComponent,
+    ArtisanFilterPipe
   ],
   imports: [
     BrowserModule,

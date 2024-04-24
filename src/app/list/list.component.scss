@@ -1,0 +1,35 @@
+.list{
+    padding-bottom: 50px;
+
+    .list_boxes {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 60px;
+        margin-left: 130px;
+
+        .list_box {
+            border: 2px solid #cd2c2e;
+            width: 300px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2, p {
+                margin: 5px 0;
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .stars {
+                display: flex;
+                flex-direction: row;
+                margin-top: 10px;
+            }
+        }
+    }
+}
