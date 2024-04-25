@@ -1,23 +1,38 @@
 footer {
-    height: 130px;
-    background-color: #82b864;
-    display: flex;
-    justify-content: stretch;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
+    height: auto;
+    background-color: #0074c7;
+    padding: 20px;
 
-    address{
-        font-style: normal;
+    .contact-details{
         display: flex;
-        color: #f1f8fc;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: center;
+        align-items: center;
+        
+        address{
+            font-style: normal;
+            display: flex;
+            color: #f1f8fc;
+        }
+
+        .tel{
+            color: #f1f8fc;
+            text-decoration: underline;
+        }
+
+        .tel:hover{
+            color: #00497c;
+        }
     }
 
     .footer_links{
         list-style-type: none;
         display: flex;
-        align-self: flex-end;
-        gap: 160px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-self: stretch;
+        padding-top: 20px;
     
         .f_link{
             text-decoration: none;
@@ -25,7 +40,7 @@ footer {
         }
 
         .f_link:hover{
-            color:#0074c7;
+            text-decoration: underline;
         }
     }
 }

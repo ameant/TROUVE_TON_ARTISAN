@@ -1,34 +1,54 @@
 .home_section {
     padding-bottom: 50px;
+    margin-top: 0;
+
+    h1{
+        margin-top: 0;
+    }
+
+    ol{
+        margin-left: 35px;
+        margin-bottom: 30px;
+    }
 
     .top {
-        padding-top: 10px;
+        padding-top: 20px;
+        background-color: #f1f8fc;
+        margin-bottom: 20px;
 
-        .boxes {
+        .card {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
+            padding-bottom: 50px;
 
-            .box {
-                border: 2px solid #cd2c2e;
+            .card-body {
+                border: 1px solid grey;
+                background-color: white;
                 width: 300px;
-                height: 200px;
+                height: 250px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
 
-                h2, p {
-                    margin: 5px 0;
-                    font-size: 16px;
+                .card-text{ 
                     text-align: center;
+                    margin: 0;
+                }
+
+                .note{
+                    margin-right: 20px;
                 }
 
                 .stars {
                     display: flex;
                     flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
                     margin-top: 10px;
+                    margin-left: 5px;
                 }
             }
         }

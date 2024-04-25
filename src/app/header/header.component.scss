@@ -1,41 +1,52 @@
 header{
-    height: 100px;
+    height: 105px;
 
     .navbar{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
 
         .logo{
-            padding-top: 10px;
             height: 100px;
+            margin-right: 30px;
         }
 
         /* Liens du menu */
         .menu{
             display: flex;
             flex-direction: row;
+            justify-content: center;
             list-style-type: none;
-            gap: 100px;
             
             .link{
                 text-decoration: none;
+                color: #f1f8fc;
+                border: 1px solid #0074c7;
+                background-color: #0074c7;
+                padding: 2px 25px;
+                border-radius: 25px;
             }
 
             .link:hover{
-                color: #0074c7;
-                text-decoration: underline;
+                background-color: #00497c;
             }
         }
 
-        .btn{
-            background-color: #82b864;
-            color: #f1f8fc;
-        }
+        form{
+            display: flex;
+            align-items: center;
+            margin-left: 60px;
+            
+       
+            .btn{
+                background-color: #0074c7;
+                color: #f1f8fc;
+            }
 
-        .btn:hover{
-            color: #0074c7;
+            .btn:hover{
+                background-color: #00497c;
+            }
         }
     }
 }

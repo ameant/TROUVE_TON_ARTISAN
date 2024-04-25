@@ -39,9 +39,7 @@ export class ListComponent {
     if (note >= 4.8) {
       return 5;
     } else if (note >= 4.3 && note < 4.8) {
-      return 4.5; // Cinquième étoile à moitié remplie
-    } else if (note >= 3.8 && note < 4.3) {
-      return 4; // Cinquième étoile vide
+      return 4.5;
     } else {
       return Math.round(note);
     }

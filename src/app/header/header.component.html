@@ -6,15 +6,15 @@
         </a>
 
         <!-- Liens du menu -->
-        <ul class="menu">
-            <li *ngFor="let category of categories$ | async">
+        <ul class="menu" *ngFor="let category of categories$ | async">
+            <li>
                 <a class="link" (click)="goToCategory(category)">{{ category }}</a>
             </li>
         </ul>
 
         <!-- Barre de recherche -->
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
+            <input required class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
         </form>
     </nav>

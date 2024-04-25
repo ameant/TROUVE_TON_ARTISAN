@@ -12,6 +12,10 @@ import { ErrorComponent } from './error/error.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtisanFilterPipe } from './artisan-filter.pipe';
+import { LegalNoticesComponent } from './legal-notices/legal-notices.component';
+import { PersonalDataComponent } from './personal-data/personal-data.component';
+import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { CookiesComponent } from './cookies/cookies.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ArtisanFilterPipe } from './artisan-filter.pipe';
     ListComponent,
     SheetComponent,
     ErrorComponent,
-    ArtisanFilterPipe
+    ArtisanFilterPipe,
+    LegalNoticesComponent,
+    PersonalDataComponent,
+    AccessibilityComponent,
+    CookiesComponent
   ],
   imports: [
     BrowserModule,

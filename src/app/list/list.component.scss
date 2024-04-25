@@ -1,7 +1,10 @@
 .list{
     padding-bottom: 50px;
+    padding-top: 5px;
+    background-color: #f1f8fc;
+    margin-bottom: 50px;
 
-    .list_boxes {
+    .link-card{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -10,25 +13,32 @@
         gap: 60px;
         margin-left: 130px;
 
-        .list_box {
-            border: 2px solid #cd2c2e;
+        .card-body{
+            border: 1px solid grey;
+            background-color: white;
             width: 300px;
-            height: 200px;
+            height: 250px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            h2, p {
-                margin: 5px 0;
-                font-size: 16px;
+            .card-text{ 
                 text-align: center;
+                margin: 0;
             }
 
-            .stars {
+            .note{
+                margin-right: 20px;
+            }
+
+            .stars{
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
+                align-items: center;
                 margin-top: 10px;
+                margin-left: 5px;
             }
         }
     }

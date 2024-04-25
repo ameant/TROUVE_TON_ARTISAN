@@ -17,14 +17,20 @@
     font-family: Graphik-Regular-Trial;
 }
 
-h1{
+h1, h2{
     font-family: Graphik-Semibold-Trial;
+}
+
+h1{
+    margin-left: 25px;
+    font-size:x-large;
+}
+
+h2{
+    color: #0074c7;
+    font-size: large;
 }
 
 a{
     text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
 }
