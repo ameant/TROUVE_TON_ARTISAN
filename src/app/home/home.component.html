@@ -1,32 +1,43 @@
 <div class="home_section">
-    <!-- Fonctionnement du site -->
-    <section class="explanations">
-        <h1>Comment trouver mon artisan ?</h1>
-        <ol>
-            <li>Choisir la catégorie d'artisanat dans le menu</li>
-            <li>Choisir un artisan</li>
-            <li>Le contacter via le formulaire de contact</li>
-            <li>Une réponse sera apportée sous 48h</li>
-        </ol>
-    </section>
-    
-    <!-- Top trois des artisans -->
-    <section class="top">
-        <h1>Les 3 artisans du mois</h1>
-        <div class="card">
-            <div *ngFor="let artisan of topArtisans" class="card-body">
-                <h2 class="card-title">{{ artisan.name }}</h2>
-                <p class="card-text">{{ artisan.speciality }}</p>
-                <p class="card-text">{{ artisan.location }}</p>
-                <div class="stars">
-                    <p class="note">{{ artisan.note }}</p>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                    <fa-icon [icon]="faStar"></fa-icon>
-                </div>
-            </div>
+  <!-- Fonctionnement du site -->
+  <section class="explanations">
+    <hr width="30px" color="#0074c7" size="6px" position="left" />
+    <h1>Comment trouver mon artisan ?</h1>
+    <ol>
+      <li>Choisir la catégorie d'artisanat dans le menu</li>
+      <li>Choisir un artisan</li>
+      <li>Le contacter via le formulaire de contact</li>
+      <li>Une réponse sera apportée sous 48h</li>
+    </ol>
+  </section>
+
+  <!-- Top trois des artisans -->
+  <section class="top">
+    <hr width="30px" color="#cd2c2e" size="6px" position="left" />
+    <h1>Les 3 artisans du mois</h1>
+    <div class="card">
+      <a
+        class="link_card"
+        routerLink=""
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <div *ngFor="let artisan of topArtisans" class="card-body">
+          <h2 class="card-title">{{ artisan.name }}</h2>
+          <p class="card-text">{{ artisan.speciality }}</p>
+          <p class="card-text">{{ artisan.location }}</p>
+
+          <!-- Etoiles -->
+          <div class="stars">
+            <p class="note">{{ artisan.note }}</p>
+            <fa-icon [icon]="faStar"></fa-icon>
+            <fa-icon [icon]="faStar"></fa-icon>
+            <fa-icon [icon]="faStar"></fa-icon>
+            <fa-icon [icon]="faStar"></fa-icon>
+            <fa-icon [icon]="faStar"></fa-icon>
+          </div>
         </div>
-    </section>
+      </a>
+    </div>
+  </section>
 </div>

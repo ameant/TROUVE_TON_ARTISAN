@@ -10,12 +10,13 @@ import { ListComponent } from './list/list.component';
 import { SheetComponent } from './sheet/sheet.component';
 import { ErrorComponent } from './error/error.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClientModule } from '@angular/common/http';
-import { ArtisanFilterPipe } from './artisan-filter.pipe';
+import { SearchPipe } from './search.pipe';
 import { LegalNoticesComponent } from './legal-notices/legal-notices.component';
 import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { CookiesComponent } from './cookies/cookies.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { CookiesComponent } from './cookies/cookies.component';
     ListComponent,
     SheetComponent,
     ErrorComponent,
-    ArtisanFilterPipe,
+    SearchPipe,
     LegalNoticesComponent,
     PersonalDataComponent,
     AccessibilityComponent,
@@ -36,7 +37,7 @@ import { CookiesComponent } from './cookies/cookies.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

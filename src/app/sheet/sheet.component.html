@@ -1,1 +1,13 @@
-<p>sheet works!</p>
+<div class="list">
+  <hr width="30px" color="#cd2c2e" size="6px" position="left" />
+  <h1>Fiche artisan</h1>
+
+  <!-- Iformations sur l'artisan -->
+  <div *ngIf="artisan">
+    <h2>{{ artisan.name }}</h2>
+    <p>{{ artisan.specialty }}</p>
+    <p>{{ artisan.location }}</p>
+    <p><u>À propos :</u> {{ artisan.about }}</p>
+    <p>{{ artisan.note }}</p>
+  </div>
+</div>

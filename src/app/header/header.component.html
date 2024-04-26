@@ -1,21 +1,45 @@
 <header>
-    <nav class="navbar">
-        <!-- Logo -->
-        <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
-            <img class="logo" src="assets/images/logo.png" alt="Logo">
-        </a>
+  <nav class="navbar">
+    <!-- Logo -->
+    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <img class="logo" src="assets/images/logo.png" alt="Logo" />
+    </a>
 
-        <!-- Liens du menu -->
-        <ul class="menu" *ngFor="let category of categories$ | async">
-            <li>
-                <a class="link" (click)="goToCategory(category)">{{ category }}</a>
+    <!-- Liens du menu -->
+    <ul class="menu" *ngFor="let category of categories$ | async">
+      <li>
+        <a class="link" (click)="goToCategory(category)">{{ category }}</a>
+      </li>
+    </ul>
+
+    <!-- Barre de recherche -->
+    <form class="form-inline">
+      <div class="search-container">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Rechercher"
+          aria-label="Rechercher"
+          required
+          [(ngModel)]="search"
+          (input)="filterResults()"
+          name="search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Rechercher
+        </button>
+
+        <div class="search-results" *ngIf="searchResults.length > 0">
+          <ul>
+            <li *ngFor="let result of searchResults">
+              <!-- Lien vers la page de fiche de l'artisan -->
+              <a [routerLink]="['/fiche', result.id]">
+                {{ result.name }} - {{ result.specialty }} - {{ result.location }}
+              </a>
             </li>
-        </ul>
-
-        <!-- Barre de recherche -->
-        <form class="form-inline">
-            <input required class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
-    </nav>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </nav>
 </header>

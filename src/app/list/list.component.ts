@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ArtisanService } from '../artisan.service';
+import { DataService } from '../data.service';
 import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
- 
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+  styleUrl: './list.component.scss',
 })
 export class ListComponent {
   faStar = faStar;
@@ -16,21 +16,21 @@ export class ListComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private artisanService: ArtisanService
-  ) { }
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const category = params['category'];
       if (category) {
-        this.artisanService.getArtisansByCategory(category).subscribe(
-          artisans => {
-            this.artisans = artisans.map(artisan => ({
+        this.dataService
+          .getArtisansByCategory(category)
+          .subscribe((artisans) => {
+            this.artisans = artisans.map((artisan) => ({
               ...artisan,
-              stars: this.calculateStars(artisan.note)
+              stars: this.calculateStars(artisan.note),
             }));
-          }
-        );
+          });
       }
     });
   }
@@ -48,13 +48,13 @@ export class ListComponent {
   starsArray(numStars: number): any[] {
     const fullStars = Math.floor(numStars);
     const halfStar = numStars - fullStars === 0.5;
-  
+
     let stars = Array(fullStars).fill(0);
-    
+
     if (halfStar) {
       stars.push('half');
     }
-  
+
     return stars;
   }
-}  
+}
