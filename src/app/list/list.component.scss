@@ -1,19 +1,27 @@
 .list {
   padding-top: 20px;
   background-color: #f1f8fc;
-  margin-bottom: 50px;  
+  margin-bottom: 50px;
+
+  .line-list {
+    width: 30px;
+    background-color: #82b864;
+    border: none;
+    height: 6px;
+    justify-content: left;
+  }
 
   .card {
     padding-bottom: 50px;
 
     .link-card {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 60px;
-        margin-left: 130px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 60px;
+      margin-left: 130px;
 
       .card-body {
         border: 1px solid grey;
@@ -30,10 +38,6 @@
           margin: 0;
         }
 
-        .note {
-          margin-right: 20px;
-        }
-
         .stars {
           display: flex;
           flex-direction: row;
@@ -41,6 +45,10 @@
           align-items: center;
           margin-top: 10px;
           margin-left: 5px;
+        }
+
+        .note {
+          margin-right: 20px;
         }
       }
     }

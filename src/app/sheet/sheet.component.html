@@ -1,13 +1,25 @@
-<div class="list">
-  <hr width="30px" color="#cd2c2e" size="6px" position="left" />
+<div class="sheet">
+  <hr class="line-sheet" />
   <h1>Fiche artisan</h1>
 
-  <!-- Iformations sur l'artisan -->
-  <div *ngIf="artisan">
-    <h2>{{ artisan.name }}</h2>
-    <p>{{ artisan.specialty }}</p>
-    <p>{{ artisan.location }}</p>
-    <p><u>À propos :</u> {{ artisan.about }}</p>
-    <p>{{ artisan.note }}</p>
+  <!-- Informations sur l'artisan -->
+  <div *ngIf="artisan" class="card">
+    <div class="card-body">
+      <h2 class="card-title">{{ artisan.name }}</h2>
+      <p class="card-text">{{ artisan.specialty }}</p>
+      <p class="card-text">{{ artisan.location }}</p>
+      <p class="card-text"><u>À propos :</u> {{ artisan.about }}</p>
+
+      <!-- Etoiles -->
+      <div class="stars">
+        <p class="note">{{ artisan.note }}</p>
+        <div *ngFor="let star of starsArray(artisan.stars)">
+          <fa-icon [icon]="faStar" *ngIf="star !== 'half'"></fa-icon>
+          <fa-icon [icon]="faStarHalfStroke" *ngIf="star === 'half'"></fa-icon>
+        </div>
+      </div>
+
+      
+    </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import { Observable } from 'rxjs';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
+  faMagnifyingGlass = faMagnifyingGlass;
   categories$: Observable<string[]> | null = null;
   search: string = '';
   artisans: any[] = [];

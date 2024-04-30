@@ -1,10 +1,10 @@
 <div class="list">
-  <hr width="30px" color="#82b864" size="6px" position="left" />
+  <hr class="line-list" />
   <h1>Liste des artisans</h1>
 
   <!-- Cartes artisans -->
   <div class="card">
-    <a class="link-card" routerLink="/fiche" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <a class="link-card" routerLink="/fiche">
       <div *ngFor="let artisan of artisans" class="card-body">
         <h2 class="card-title">{{ artisan.name }}</h2>
         <p class="card-text">{{ artisan.specialty }}</p>

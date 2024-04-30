@@ -1,19 +1,35 @@
 .home_section {
   padding-bottom: 50px;
 
-  h1 {
-    margin-top: 0;
-  }
+    .line-explanations {
+      width: 30px; 
+      background-color: #0074c7;
+      border: none;
+      height: 6px;
+      justify-content: flex-start;
+    }
 
-  ol {
-    margin-left: 35px;
-    margin-bottom: 30px;
-  }
+    h1 {
+      margin-top: 0;
+    }
+
+    ol {
+      margin-left: 35px;
+      margin-bottom: 30px;
+    }
 
   .top {
     padding-top: 20px;
     background-color: #f1f8fc;
     margin-bottom: 20px;
+
+    .line-top {
+      width: 30px;
+      background-color: #cd2c2e; 
+      border: none;
+      height: 6px; 
+      justify-content: flex-start;
+    }
 
     .card {
       display: flex;
