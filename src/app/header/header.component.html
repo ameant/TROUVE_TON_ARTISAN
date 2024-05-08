@@ -29,17 +29,40 @@
           <fa-icon [icon]="faMagnifyingGlass" class="iconbtn"></fa-icon>
         </button>
 
-        <div class="search-results" *ngIf="searchResults.length > 0">
+        <!-- Liste des résultats -->
+        <div
+          class="search-results"
+          *ngIf="searchResultsVisible && searchResults.length > 0"
+        >
           <ul class="ul-results">
             <li *ngFor="let result of searchResults" class="list-results">
               <!-- Lien vers la page de fiche de l'artisan -->
-              <a class="link-results" [routerLink]="['/fiche', result.id]">
-                {{ result.name }} - {{ result.specialty }} - {{ result.location }}
+              <a
+                class="link-results"
+                [routerLink]="['/fiche', result.id]"
+                (click)="handleLinkClick()"
+              >
+                {{ result.name }} - {{ result.specialty }} -
+                {{ result.location }}
               </a>
             </li>
           </ul>
         </div>
       </div>
     </form>
+
+    <!-- Icône de la barre de menu burger -->
+    <div class="burgermenu" (click)="toggleMenu()">
+      <fa-icon [icon]="faBars" class="iconbtn"></fa-icon>
+    </div>
+
+    <!-- Liste des éléments du menu burger -->
+    <ul class="burgermenulist" *ngIf="showLinks">
+      <li *ngFor="let category of categories$ | async">
+        <a class="link" (click)="goToCategory(category); toggleMenu()">{{
+          category
+        }}</a>
+      </li>
+    </ul>
   </nav>
 </div>

@@ -1,22 +1,22 @@
 .home_section {
   padding-bottom: 50px;
 
-    .line-explanations {
-      width: 30px; 
-      background-color: #0074c7;
-      border: none;
-      height: 6px;
-      justify-content: flex-start;
-    }
+  .line-explanations {
+    width: 30px;
+    background-color: #0074c7;
+    border: none;
+    height: 6px;
+    justify-content: flex-start;
+  }
 
-    h1 {
-      margin-top: 0;
-    }
+  h1 {
+    margin-top: 0;
+  }
 
-    ol {
-      margin-left: 35px;
-      margin-bottom: 30px;
-    }
+  ol {
+    margin-left: 35px;
+    margin-bottom: 30px;
+  }
 
   .top {
     padding-top: 20px;
@@ -25,54 +25,71 @@
 
     .line-top {
       width: 30px;
-      background-color: #cd2c2e; 
+      background-color: #cd2c2e;
       border: none;
-      height: 6px; 
+      height: 6px;
       justify-content: flex-start;
     }
 
-    .card {
+    .card-container {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
       padding-bottom: 50px;
 
-      .link_card {
+      .card-body {
+        border: 1px solid grey;
+        background-color: white;
+        width: 300px;
+        height: 250px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 60px;
 
-        .card-body {
-          border: 1px solid grey;
-          background-color: white;
-          width: 300px;
-          height: 250px;
+        .card-text {
+          text-align: center;
+          margin: 0;
+        }
+
+        .note {
+          margin-right: 20px;
+        }
+
+        .stars {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           justify-content: center;
           align-items: center;
-
-          .card-text {
-            text-align: center;
-            margin: 0;
-          }
-
-          .note {
-            margin-right: 20px;
-          }
-
-          .stars {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-            margin-left: 5px;
-          }
+          margin-top: 10px;
+          margin-left: 5px;
         }
+      }
+    }
+  }
+}
+
+// Configuration tablettes
+@media (max-width: 1023px) {
+  .home_section {
+    .top {
+      .card-container {
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+    }
+  }
+}
+
+// Configuration mobiles
+@media (max-width: 767px) {
+  .home_section {
+    .top {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
       }
     }
   }

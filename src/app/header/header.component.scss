@@ -1,5 +1,6 @@
 .header {
   height: 105px;
+  position: relative;
 
   .navbar {
     display: flex;
@@ -26,14 +27,20 @@
         background-color: #0074c7;
         padding: 2px 25px;
         border-radius: 25px;
+        cursor: pointer;
 
         &:hover {
           background-color: #00497c;
         }
       }
     }
+
+    .burgermenu {
+      display: none;
+    }
   }
 
+  // Barre de recherche
   .form-inline {
     display: flex;
     align-items: center;
@@ -56,15 +63,16 @@
         background-color: white;
 
         &:hover {
-          background-color: #00497c;
+          background-color: #0074c7;
           border-radius: 50px;
           padding: 3px 6px;
         }
       }
 
+      // Liste des résultats
       .search-results {
         position: absolute;
-        top: calc(100% + 5px); /* Positionnement sous la barre de recherche */
+        top: calc(100% + 5px);
         left: 0;
         width: 100%;
         background-color: #fff;
@@ -80,13 +88,104 @@
           .list-results {
             padding: 10px;
             font-size: 14px;
+          }
+
+          .list-results:hover {
+            background-color: #0074c7;
+            border-radius: 25px;
+            color: #f1f8fc;
 
             .link-results:hover {
-              color:#0074c7;
-              text-decoration: underline;
+              color: #f1f8fc;
             }
           }
         }
+      }
+    }
+  }
+
+  // Configuration tablettes et mobiles
+  @media (max-width: 1023px) {
+    .navbar {
+      flex-direction: row;
+      position: relative;
+
+      .burgermenu {
+        display: block;
+        margin-left: 20px;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0074c7;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 999;
+      }
+
+      .menu .link {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  // Configuration desktop
+  @media (min-width: 1024px) {
+    .navbar {
+      .burgermenu {
+        display: none;
+      }
+
+      .burgermenulist {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+      }
+    }
+  }
+
+  // Styles pour la liste du menu burger en overlay
+  .burgermenulist {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style-type: none;
+
+    &.active {
+      display: block;
+    }
+
+    .link {
+      color: white;
+      text-decoration: none;
+      border: 1px solid #0074c7;
+      background-color: #0074c7;
+      border-radius: 25px;
+      padding: 2px 25px;
+      margin-bottom: 10px;
+      display: block;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #00497c;
       }
     }
   }

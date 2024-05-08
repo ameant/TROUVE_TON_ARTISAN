@@ -11,46 +11,56 @@
     justify-content: left;
   }
 
-  .card {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
     padding-bottom: 50px;
 
-    .link-card {
+    .card-body {
+      border: 1px solid grey;
+      background-color: white;
+      width: 300px;
+      height: 250px;
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: flex-start;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 60px;
-      margin-left: 130px;
 
-      .card-body {
-        border: 1px solid grey;
-        background-color: white;
-        width: 300px;
-        height: 250px;
+      .card-text {
+        text-align: center;
+        margin: 0;
+      }
+
+      .stars {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-
-        .card-text {
-          text-align: center;
-          margin: 0;
-        }
-
-        .stars {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          margin-top: 10px;
-          margin-left: 5px;
-        }
-
-        .note {
-          margin-right: 20px;
-        }
+        margin-top: 10px;
+        margin-left: 5px;
       }
+
+      .note {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+// Configuration tablettes et mobiles
+@media (max-width: 1023px) {
+  .list {
+    .card-container {
+      flex-direction: column;
+      
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-left: auto;
     }
   }
 }

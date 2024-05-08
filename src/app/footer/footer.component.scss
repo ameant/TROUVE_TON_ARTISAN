@@ -45,3 +45,15 @@
     }
   }
 }
+
+// Configuration mobiles
+@media (max-width: 767px) {
+  .footer {
+    .footer_links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 30px;
+    }
+  }
+}
