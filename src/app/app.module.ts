@@ -10,7 +10,6 @@ import { ListComponent } from './list/list.component';
 import { SheetComponent } from './sheet/sheet.component';
 import { ErrorComponent } from './error/error.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SearchPipe } from './search.pipe';
 import { LegalNoticesComponent } from './legal-notices/legal-notices.component';
 import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
@@ -27,7 +26,6 @@ import { FormsModule } from '@angular/forms';
     ListComponent,
     SheetComponent,
     ErrorComponent,
-    SearchPipe,
     LegalNoticesComponent,
     PersonalDataComponent,
     AccessibilityComponent,

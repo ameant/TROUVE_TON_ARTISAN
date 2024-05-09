@@ -254,7 +254,7 @@ export class DataService {
   }
 
   getArtisanById(id: string): Observable<any> {
-    const artisan = this.artisans.find(artisan => artisan.id === id);
+    const artisan = this.artisans.find((artisan) => artisan.id === id);
     return of(artisan);
   }
 }

@@ -87,7 +87,7 @@
             type="text"
             name="object"
             id="object"
-            placeholder="Sujet"
+            placeholder="Objet"
             [(ngModel)]="formData.object"
             #object="ngModel"
             required
@@ -114,7 +114,7 @@
           <!-- Message requis -->
           <div *ngIf="msg.invalid && (msg.dirty || msg.touched)">
             <div class="alert" *ngIf="msg.errors?.['required']">
-              Message requis.
+              Message requis
             </div>
           </div>
 
