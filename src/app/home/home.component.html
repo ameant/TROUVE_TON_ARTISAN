@@ -1,0 +1,40 @@
+<div class="home_section">
+  <!-- Fonctionnement du site -->
+  <section>
+    <hr class="line-explanations" />
+    <h1>Comment trouver mon artisan ?</h1>
+    <ol>
+      <li>Choisir la catégorie d'artisanat dans le menu</li>
+      <li>Choisir un artisan</li>
+      <li>Le contacter via le formulaire de contact</li>
+      <li>Une réponse sera apportée sous 48h</li>
+    </ol>
+  </section>
+
+  <!-- Top trois des artisans -->
+  <section class="top">
+    <hr class="line-top" />
+    <h1>Les 3 artisans du mois</h1>
+    <div class="card-container">
+      <div *ngFor="let artisan of topArtisans" class="card">
+        <a [routerLink]="['/fiche', artisan.id]" class="link_card">
+          <div class="card-body">
+            <h2 class="card-title">{{ artisan.name }}</h2>
+            <p class="card-text">{{ artisan.speciality }}</p>
+            <p class="card-text">{{ artisan.location }}</p>
+
+            <!-- Etoiles -->
+            <div class="stars">
+              <p class="note">{{ artisan.note }}</p>
+              <fa-icon [icon]="faStar"></fa-icon>
+              <fa-icon [icon]="faStar"></fa-icon>
+              <fa-icon [icon]="faStar"></fa-icon>
+              <fa-icon [icon]="faStar"></fa-icon>
+              <fa-icon [icon]="faStar"></fa-icon>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

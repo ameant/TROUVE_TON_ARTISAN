@@ -1,0 +1,132 @@
+<div class="sheet">
+  <hr class="line-sheet" />
+  <h1>Fiche artisan</h1>
+
+  <!-- Informations sur l'artisan -->
+  <div *ngIf="artisan" class="card">
+    <div class="card-body">
+      <h2 class="card-title">{{ artisan.name }}</h2>
+      <p class="card-text">{{ artisan.specialty }}</p>
+      <p class="card-text">{{ artisan.location }}</p>
+      <p class="card-text about"><u>À propos :</u> {{ artisan.about }}</p>
+      <a target="_blank" class="card-text website" [href]="artisan.website">{{
+        artisan.website
+      }}</a>
+
+      <!-- Etoiles -->
+      <div class="stars">
+        <p class="note">{{ artisan.note }}</p>
+        <div *ngFor="let star of starsArray(artisan.stars)">
+          <fa-icon [icon]="faStar" *ngIf="star !== 'half'"></fa-icon>
+          <fa-icon [icon]="faStarHalfStroke" *ngIf="star === 'half'"></fa-icon>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <section class="contact-section">
+        <h2 class="contact_h">Formulaire de contact</h2>
+        <form
+          class="contact"
+          (ngSubmit)="submitForm()"
+          #contactForm="ngForm"
+          *ngIf="!messageSent"
+          novalidate
+        >
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nom Prénom"
+            [(ngModel)]="formData.name"
+            #name="ngModel"
+            required
+          />
+
+          <!-- Nom requis -->
+          <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div class="alert" *ngIf="name.errors?.['required']">
+              Nom requis.
+            </div>
+          </div>
+
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            [(ngModel)]="formData.email"
+            #email="ngModel"
+            required
+          />
+
+          <!-- Email requis -->
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div class="alert" *ngIf="email.errors?.['required']">
+              Email requis
+            </div>
+          </div>
+
+          <input
+            type="tel"
+            name="tel"
+            id="tel"
+            placeholder="Numéro de téléphone"
+            [(ngModel)]="formData.tel"
+            #tel="ngModel"
+            required
+          />
+
+          <!-- Téléphone requis -->
+          <div *ngIf="tel.invalid && (tel.dirty || tel.touched)">
+            <div class="alert" *ngIf="tel.errors?.['required']">
+              Téléphone requis
+            </div>
+          </div>
+
+          <input
+            type="text"
+            name="object"
+            id="object"
+            placeholder="Objet"
+            [(ngModel)]="formData.object"
+            #object="ngModel"
+            required
+          />
+
+          <!-- Objet requis -->
+          <div *ngIf="object.invalid && (object.dirty || object.touched)">
+            <div class="alert" *ngIf="object.errors?.['required']">
+              Objet requis
+            </div>
+          </div>
+
+          <textarea
+            name="msg"
+            id="msg"
+            cols="40"
+            rows="4"
+            placeholder="Message"
+            [(ngModel)]="formData.msg"
+            #msg="ngModel"
+            required
+          ></textarea>
+
+          <!-- Message requis -->
+          <div *ngIf="msg.invalid && (msg.dirty || msg.touched)">
+            <div class="alert" *ngIf="msg.errors?.['required']">
+              Message requis
+            </div>
+          </div>
+
+          <!-- Désactiver le bouton si le formulaire n'est pas valide -->
+          <button type="submit" [disabled]="!contactForm.valid">Envoyer</button>
+        </form>
+
+        <!-- Message de succès -->
+        <div *ngIf="messageSent">
+          <p>Message envoyé avec succès à {{ artisan.email }}</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
